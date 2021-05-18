@@ -24,10 +24,3 @@ body{
   padding: 0px 15px;
   margin: 0 auto;
 }
-
-a{
-  @extend %quicksand-med;
-  color: $default;
-  font-size: 16px;
-  line-height: 1.6;
-}
