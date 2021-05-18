@@ -1,6 +1,7 @@
 @import "reset";
 @import "vars";
 @import "global";
+@import "libs";
 @import "fonts";
 
 .header{
@@ -21,7 +22,7 @@
     text-transform: uppercase;
     @extend %rob-reg;
     color: $title;
-    transition: all .5s;
+    transition: all .3s;
     &:not(:first-child){
       margin-left: 40px;
     }
