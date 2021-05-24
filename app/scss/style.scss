@@ -566,10 +566,21 @@
   padding: 50px 0 165px;
   background-image: url('../images/decor/blog-bg.svg');
   background-repeat: no-repeat;
-  background-position: bottom center;
+  background-position: center center;
   &__items{
     display: flex;
     justify-content: space-between;
+    position: relative;
+    &::after{
+      content: '';
+      position: absolute;
+      background-image: url('../images/decor/blog-items-bg.svg');
+      width: 126px;
+      height: 53px;
+      top: -28px;
+      right: -22px;
+      z-index: -1;
+    }
   }
   &__item{
     max-width: 370px;
@@ -649,19 +660,6 @@
       top: 7px;
     }
   }
-}
-
-
-
-.BG {
-  background-color: rgb(255, 255, 255);
-  box-shadow: 20px 0px 60px 0px rgba(202, 202, 202, 0.35);
-  position: absolute;
-  left: 375px;
-  top: 5688px;
-  width: 370px;
-  height: 478px;
-  z-index: 115;
 }
 
 
