@@ -14,32 +14,48 @@ $(function () {
 
   });
 
-  const daysElement = document.querySelector("#days");
-  const hoursElement = document.querySelector("#hours");
-  const minutesElement = document.querySelector("#minutes");
-  const secondsElement = document.querySelector("#seconds");
+  function getTimeRemaining(endtime) {
+    const total = Date.parse(endtime) - Date.parse(new Date());
+    const seconds = Math.floor((total / 1000) % 60);
+    const minutes = Math.floor((total / 1000 / 60) % 60);
+    const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+    const days = Math.floor(total / (1000 * 60 * 60 * 24));
 
-  // Get specific date and time in milliseconds from 1970 UTC
-  let countDownDate = new Date("May 31, 2021").getTime();
+    return {
+      total,
+      days,
+      hours,
+      minutes,
+      seconds
+    };
+  }
 
-  setInterval(() => {
-    // Get today's date and time in milliseconds from 1970 UTC
-    let now = new Date().getTime();
+  function initializeClock(id, endtime) {
+    const clock = document.querySelector('.promo__counter');
+    const daysSpan = clock.querySelector('.promo__days');
+    const hoursSpan = clock.querySelector('.promo__hours');
+    const minutesSpan = clock.querySelector('.promo__minutes');
+    const secondsSpan = clock.querySelector('.promo__seconds');
 
-    let distance = countDownDate - now;
+    function updateClock() {
+      const t = getTimeRemaining(endtime);
 
-    let days = Math.floor(
-      (distance % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24)
-    );
-    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      daysSpan.innerHTML = t.days;
+      hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+      minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+      secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
 
-    daysElement.textContent = days;
-    hoursElement.textContent = hours;
-    minutesElement.textContent = minutes;
-    secondsElement.textContent = seconds;
-  }, 1000);
+      if (t.total <= 0) {
+        clearInterval(timeinterval);
+      }
+    }
+
+    updateClock();
+    const timeinterval = setInterval(updateClock, 1000);
+  }
+
+  const deadline = $('.promo__counter').attr('data-time');
+  initializeClock('promo__counter', deadline);
 
 
 });
