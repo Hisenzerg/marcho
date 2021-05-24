@@ -24,3 +24,22 @@ body{
   padding: 0px 15px;
   margin: 0 auto;
 }
+
+.title{
+  @extend %rob-bold;
+  font-size: 48px;
+  color: $title;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.text{
+  text-align: center;
+  max-width: 525px;
+  margin: 0 auto;
+  margin-bottom: 55px;
+}
+
+.star{
+  margin: 0 auto;
+}
