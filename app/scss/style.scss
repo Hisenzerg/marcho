@@ -155,6 +155,25 @@
   }
 }
 
+.top{
+  &__container{
+    max-width: 1700px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    padding: 120px 0 130px;
+    text-align: center;
+  }
+  &__title{
+    @extend %rob-reg;
+    font-size: 48px;
+    color: $title;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
+
 .top-slider {
   &__container {
     max-width: 1520px;
@@ -662,7 +681,56 @@
   }
 }
 
-
+.modal{
+  padding-top: 100px;
+  max-width: 570px;
+  margin: 0 auto 115px;
+  &__links{
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+  &__link{
+    @extend %rob-reg;
+    font-size: 22px;
+    color: #909090;
+    margin: 0 30px;
+  }
+  &__link--active{
+    @extend %rob-bold;
+    color: $accent;
+  }
+  &__label{
+    display: block;
+    margin-bottom: 30px;
+  }
+  &__input{
+    font-size: 20px;
+    display: block;
+    width: 100%;
+    margin-top: 7px;
+    border: none;
+    height: 58px;
+    background-color: $bg;
+    padding: 0 15px;
+  }
+  &__btn{
+    display: block;
+    background-color: $title;
+    @extend %rob-reg;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 14px 0;
+    width: 100%;
+    border: none;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  &__forget{
+    color: $accent;
+  }
+}
 
 
 
