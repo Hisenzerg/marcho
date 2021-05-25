@@ -727,6 +727,9 @@
     margin-bottom: 10px;
     cursor: pointer;
   }
+  &__text{
+    margin-bottom: 25px;
+  }
   &__forget{
     color: $accent;
   }
