@@ -735,6 +735,33 @@
   }
 }
 
+.page-404{
+  padding: 110px 0 120px;
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__content{
+    max-width: 570px;
+    width: 100%;
+  }
+  &__title{
+    @extend %rob-bold;
+    font-size: 48px;
+    color: #28384f;
+    margin-bottom: 20px;
+  }
+  &__text{
+    max-width: 460px;
+    margin-bottom: 75px;
+  }
+  &__link{
+    @extend %btn;
+    padding: 17px 32px;
+  }
+}
+
 
 
 
