@@ -867,6 +867,7 @@
 
 .filter-color{
   &__label{
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
     padding-bottom: 20px;
@@ -880,16 +881,13 @@
     }
   }
   &__input{
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    position: absolute;
+    @extend %checkbox-hidden;
     &:checked + .filter-color__checkbox{
       background-image: url('../images/icons/checked-on.svg');
     }
   }
   &__checkbox{
+    transition: all .3s;
     width: 16px;
     height: 16px;
     position: absolute;
@@ -915,6 +913,96 @@
     background-color: #923899;
   }
 }
+
+.filter-size{
+  &__label{
+    cursor: pointer;
+    padding-left: 35px;
+    display: block;
+    &:not(:last-child){
+      margin-bottom: 15px;
+    }
+  }
+  &__input{
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    position: absolute;
+    background-image: url('../images/icons/uncheck-size.svg');
+    &:checked + .filter-size__checkbox{
+      border: none;
+      background-image: url('../images/icons/check-size.svg');
+      & + .filter-size__text{
+        color: $accent;
+      }
+    }
+  }
+  &__checkbox{
+    transition: all .3s;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border: 1px solid #8d8d8d;
+    border-radius: 50%;
+    margin-left: -35px;
+    margin-top: 2px;
+  }
+}
+
+.filter-category{
+  &__label{
+    cursor: pointer;
+    display: block;
+    &:not(:last-child){
+      margin-bottom: 15px;
+    }
+  }
+  &__input{
+    @extend %checkbox-hidden;
+    &:checked + .filter-category__checkbox{
+      background-color: $accent;
+      color: #fff;
+    }
+  }
+  &__checkbox{
+    transition: all .3s;
+    background-color: #f6f6f6;
+    color: $title;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 20px;
+  }
+}
+
+.filter-tags{
+  &__title{
+    text-transform: none;
+  }
+  &__label{
+    display: inline-block;
+    margin-right: 8px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  &__input{
+    @extend %checkbox-hidden;
+    &:checked + .filter-tags__checkbox{
+      background-color: $accent;
+      color: #fff;
+      border: 1px solid $accent;
+    }
+  }
+  &__checkbox{
+    transition: all .3s;
+    display: inline-block;
+    border: 1px solid $default;
+    padding: 10px 20px;
+    color: $default;
+    background-color: #fff;
+  }
+}
+
 
 
 
