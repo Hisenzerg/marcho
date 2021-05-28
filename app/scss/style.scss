@@ -429,6 +429,39 @@
 .product-item{
   text-align: center;
   max-width: 370px;
+  &.product-item--list{
+    min-width: 100%;
+    &:hover{
+      .product-item__link-box{
+        transform: translateY(-280%);
+      }
+    }
+    .product-item__img-box{
+      height: 250px;
+      width: 200px;
+      img{
+        height: 250px;
+      }
+    }
+    .product-item__link-box{
+      width: 115px;
+      background-color: transparent;
+      box-shadow: none;
+      bottom: auto;
+      .product-item__link{
+        width: 50px;
+        height: 50px;
+        background-color: #fff;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .product-item__link--line{
+        display: none;
+      }
+    }
+  }
   &:hover .product-item__link-box{
     transform: translateY(0);
   }
@@ -1002,6 +1035,14 @@
 
 .shop-content{
   width: 100%;
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .product-item{
+      margin-bottom: 40px;
+    }
+  }
   &__filter{
     padding: 15px 25px;
     border: 1px solid #ececec;
@@ -1011,12 +1052,59 @@
     align-items: center;
   }
   &__filter-buttons{
+    display: flex;
+    align-items: center;
     
   }
   &__filter-btn{
+    cursor: pointer;
+    line-height: 0; 
+    margin-left: 15px;
+    padding: 0;
     border: none;
     background-color: transparent;
+    &.shop-content__filter-btn--active{
+      path{
+        fill: $accent;
+      }
+    }
   }
+}
+
+.jq-selectbox__select {
+  margin-left: 30px;
+  height: 32px;
+  padding: 0 30px 0 0;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  box-shadow: none;
+  font-family: 'Quicksand-Medium', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: $default;
+  text-shadow: none;
+  &:hover{
+    background: transparent;
+  }
+}
+
+.jq-selectbox.focused .jq-selectbox__select{
+  border: none;
+}
+
+.jq-selectbox__trigger{
+  border-left: none;
+}
+
+.jq-selectbox__trigger-arrow {
+  position: absolute;
+  top: 14px;
+  right: 12px;
+  width: 10px;
+  height: 5px;
+  border: none;
+  background-image: url('../images/icons/angle-down.svg');
 }
 
 
