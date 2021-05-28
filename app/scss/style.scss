@@ -820,9 +820,6 @@
     justify-content: space-between;
     align-items: center;
   }
-  span{
-
-  }
   &__btn{
     @extend %btn;
     border:none;
@@ -1000,6 +997,25 @@
     padding: 10px 20px;
     color: $default;
     background-color: #fff;
+  }
+}
+
+.shop-content{
+  width: 100%;
+  &__filter{
+    padding: 15px 25px;
+    border: 1px solid #ececec;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__filter-buttons{
+    
+  }
+  &__filter-btn{
+    border: none;
+    background-color: transparent;
   }
 }
 
