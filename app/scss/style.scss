@@ -1643,6 +1643,106 @@
   }
 }
 
+.blog-slider{
+  .slick-arrow{
+     path{
+      fill: #fff;
+    }
+    cursor: pointer;
+    z-index: 10;
+    position: absolute;
+    border: none;
+    padding: 10px 15px;
+    background-color: $accent;
+    box-shadow: 0px 7px 20px 0px rgba(168, 168, 168, 0.3);
+    border-radius: 50%;
+    line-height: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .slick-prev{
+    left: 40px;
+  }
+  .slick-next{
+    right: 40px;
+    svg{
+      transform: rotate(180deg);
+    }
+  }
+  .slick-disabled{
+    background-color: #fff;
+    path{
+      fill: $accent;
+    }
+  }
+}
+
+.person{
+  padding: 35px 28px 40px;
+  text-align: center;
+  &__img{
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    display: block;
+  }
+  &__name{
+    @extend %rob-bold;
+    font-size: 18px;
+    color: $title;
+  }
+  &__position{
+    color: $accent;
+    margin-bottom: 20px;
+  }
+  &__text{
+    margin-bottom: 30px;
+  }
+}
+
+.latest-post{
+  &__item{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    &:not(:last-child){
+      padding-bottom: 20px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #ececec;
+    }
+  }
+  &__img{
+    max-width: 80px;
+    height: 80px;
+    object-fit: cover
+  }
+  &__info{
+    max-width: 210px;
+  }
+  &__info-link{
+    display: block;
+    @extend %rob-reg;
+    font-size: 18px;
+    color: $title;
+    margin-bottom: 5px;
+  }
+  &__info-date{
+    padding-left: 27px;
+    position: relative;
+    &::before{
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background-image: url('../images/icons/calendar.svg');
+      left: 0;
+      top: 5px;
+    }
+  }
+}
+
 
 
 
