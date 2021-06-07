@@ -1745,12 +1745,146 @@
 
 .blog-one{
   padding: 120px 0;
+  &__text{
+    h4{
+      @extend %rob-med;
+      font-size: 22px;
+      color: $title;
+      margin: 20px 0;
+    }
+    p{
+      margin: 20px 0;
+    }
+    blockquote{
+      @extend %rob-reg;
+      font-size: 22px;
+      color: $title;
+      background-color: $bg;
+      border-left: 3px solid $accent;
+      padding: 35px 35px 40px 35px;
+      margin: 20px 0;
+    }
+  }
+  &__left-img{
+    width: 340px;
+    height: 274px;
+    object-fit: cover;
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 10px;
+  }
+  &__right-img{
+    width: 340px;
+    height: 274px;
+    object-fit: cover;
+    float: right;
+    margin-left: 30px;
+    margin-bottom: 10px;
+  }
   &__inner{
     display: flex;
     justify-content: space-between;
   }
   &__content{
     width: 770px;
+  }
+  &__text{
+    border: 1px solid #ececec;
+    border-top: none;
+    padding: 29px;
+    margin-top: -1px;
+  }
+  &__info{
+    display: flex;
+    margin-bottom: 30px;
+  }
+  &__info-link{
+    margin-right: 30px;
+    padding-left: 25px;
+    position: relative;
+    &::before{
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 2px;
+      width: 16px;
+      height: 16px;
+      background-image: url('../images/icons/calendar-blog-one.svg');
+    }
+  }
+  &__info-link--comment::before{
+    background-image: url('../images/icons/comment.svg');
+  }
+  &__info-link--author::before{
+    background-image: url('../images/icons/userblog-one.svg');
+  }
+  &__form-title{
+    border-top: 1px solid #ececec;
+    padding-top: 35px;
+    @extend %rob-bold;
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    color: $title;
+  }
+  &__comments-title{
+    @extend %rob-bold;
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    color: $title;
+  }
+  .comments-form__text-input{
+    width: 370px;
+  }
+  &__box{
+    margin: 25px 0 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__tags,
+  &__share{
+    span{
+      text-transform: uppercase;
+      color: $title;
+      @extend %rob-med;
+      margin-right: 10px;
+    }
+  }
+  &__share-link{
+    margin-right: 15px;
+    vertical-align: middle;
+    path{
+     transition: all .3s;
+     fill: $default;
+   }
+    &:hover{
+        path{
+        fill: $accent;
+      }
+    }
+  }
+  &__author{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #ececec;
+  }
+  &__author-img{
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+  }
+  &__author-title{
+    @extend %rob-med;
+    font-size: 22px;
+    color: $title;
+    margin-bottom: 20px;
+  }
+  &__author-text{
+    max-width: 590px;
   }
 }
 
