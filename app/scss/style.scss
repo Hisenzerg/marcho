@@ -1743,6 +1743,17 @@
   }
 }
 
+.blog-one{
+  padding: 120px 0;
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__content{
+    width: 770px;
+  }
+}
+
 
 
 
