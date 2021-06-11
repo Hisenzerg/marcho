@@ -35,6 +35,9 @@
     display: block;
     line-height: 2.25;
   }
+  &__title--toggle{
+    pointer-events: none;
+  }
   &__title {
     margin-bottom: 37px;
     @extend %rob-med;
@@ -127,6 +130,12 @@
 
 @media (max-width: 520px){
   .footer-top{
+    &__title--toggle{
+      cursor: pointer;
+    }
+    &__nav{
+      margin-top: 30px;
+    }
     &__input{
       max-width: 100%;
       margin-right: 0;
