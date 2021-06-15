@@ -43,3 +43,38 @@
     padding: 14px 36px;
   }
 }
+
+@media (max-width: 1050px){
+  .video-fashion{
+    padding: 40px 0;
+    &__inner{
+      display: block;
+    }
+    &__popup{
+      max-width: 100%;
+      background-position: center top;
+      margin-bottom: 10px;
+    }
+    &__content{
+      max-width: 100%;
+    }
+  }
+}
+
+@media (max-width: 520px){
+  .video-fashion{
+    &__popup{
+      height: 330px;
+    }
+    &__subtitle{
+      font-size: 18px;
+    }
+    &__title{
+      font-size: 30px;
+      margin-bottom: 5px;
+    }
+    &__text{
+      margin-bottom: 25px;
+    }
+  }
+}

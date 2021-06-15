@@ -52,3 +52,34 @@
     line-height: 1;
   }
 }
+
+@media (max-width: 1200px){
+  .promo{
+    padding: 60px 0;
+    background-image: none;
+    background-color: #f6f6f6;
+    &__inner{
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (max-width: 620px){
+  .promo{
+    &__counter{
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    &__counter-item{
+      margin: 20px 36px;
+    }
+  }
+}
+
+@media (max-width: 450px){
+  .promo{
+    &__counter-item{
+      margin: 10px;
+    }
+  }
+}
